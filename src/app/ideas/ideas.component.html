@@ -4,7 +4,7 @@
         <button>Filter</button>
     </div>
     <div class="searching">
-        <input class="searchbox" type="text" placeholder="Search..">
+        <input #box (input)="searchList($event.target.value)" class="searchbox" type="text" placeholder="Search..">
     </div>
 </div>
 <div class="itemsContainer" *ngIf="items">

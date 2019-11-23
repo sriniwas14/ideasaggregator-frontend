@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-ideas',
@@ -6,48 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ideas.component.scss']
 })
 export class IdeasComponent implements OnInit {
-  items : Object = [
-      {
-        title: "Wohoo",
-        description: "Wohoo some more",
-        color: "red"
-      },
-      {
-        title: "Niks",
-        description: "Niks some more",
-        color: "blue"
-      },
-      {
-        title: "Iota",
-        description: "Iota some more",
-        color: "green"
-      },
-      {
-        title: "Niks",
-        description: "Niks some more",
-        color: "blue"
-      },
-      {
-        title: "Iota",
-        description: "Iota some more",
-        color: "green"
-      },
-      {
-        title: "Niks",
-        description: "Niks some more",
-        color: "blue"
-      },
-      {
-        title: "Iota",
-        description: "Iota some more",
-        color: "green"
-      }
-  ]
+  items = [];
 
-  constructor() { }
+  constructor(private http: HttpService) { }
 
   ngOnInit() {
-    
+    this.items = this.http.fetchIdeas("")
+  }
+
+  searchList(e){
+    this.items = this.http.fetchIdeas(e)
   }
 
 }
