@@ -1,0 +1,31 @@
+@import '../variables.scss';
+
+header {
+    display: flex;
+    background: $header-bg;
+    box-shadow: 0 0 12px -7px;
+    padding: 10px;
+}
+
+h3 {
+    color:rgb(26, 26, 26);
+    margin: 0;
+    font-weight: 200;
+    font-size: 22px;
+    font-family: Oswald;
+}
+
+.logoutButton {
+    margin-left: auto;
+    border-radius: 9px;
+    background: white;
+    border: 0;
+    padding: 9px 31px;
+    box-shadow: 0 4px 10px -9px;
+    transition: 0.2s ease-out;
+    &:hover {
+        transition: 0.2s ease-in;
+        transform: scale(1.02);
+        box-shadow: 0 4px 13px -9px;
+    }
+}
