@@ -1,1 +1,23 @@
-<p>ideas works!</p>
+<div class="toolbar">
+    <div class="sorting">
+        <button style="margin-right: 8px;">Sort</button>
+        <button>Filter</button>
+    </div>
+    <div class="searching">
+        <input class="searchbox" type="text" placeholder="Search..">
+    </div>
+</div>
+<div class="itemsContainer" *ngIf="items">
+    <div class="cardContainer" *ngFor="let item of items">
+        <div class="card interactive">
+            <div class="cardBody">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>                
+            </div>
+            <div class="cardFooter">
+                <span class="status">Complete</span>
+                <span class="category">WorkToDo</span>
+            </div>
+        </div>
+    </div>
+</div>
